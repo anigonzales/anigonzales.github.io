@@ -57,19 +57,17 @@
                  * Using the count variable we can keep track of how many times we have run the loop.
                  * Here we want to run our loop 100 times to create 100 circles.
                  */
-                for (var count = 1; count <= 100; count++) {
+                for (i = 0; i < 100; i++) {
                     // TODO 3 : YOUR CODE STARTS HERE //////////////////////////
                     circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
 					
-                     if (circle.alpha < .2) {
+                     if (circle.alpha < 2) {
     	                draw.blurFilterOn(circle);
                     }
     
                      physikz.addRandomVelocity(circle, canvas);
                      circles.push(circle);
                      view.addChild(circle);
-                    circle.velocityX = -2.3;
-                    circle.velocityY = -1;
                     
                     
                     
@@ -89,23 +87,29 @@
                         circle = circles[i];
                        
                         // TODO 5 : Update the circles position //
-                        physikz.updatePosition(circle)
+                        physikz.updatePosition(circle);
                        
                         // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+                        var radius = circle.radius;
+                        var areaWidth = canvas.width + radius;
+                        var areaHeight = canvas.height + radius;
+                        
                         if ( circle.x > canvas.width + circle.radius ) {
                             // your code to place circle exactly off the stage at the left-side //
-                            circle.x = - circle.radius
-                        } else if ( circle.x > canvas.width + circle.radius ) {
+                            circle.x = - circle.radius;
+                            
+                        } else if ( circle.x < -circle.radius ) {
                             // your code to place circle exactly off the stage at the right-side //
-                            circle.x += circle.radius
+                            circle.x = canvas.width + circle.radius;
                         }
                         
-                        if ( circle.y > canvas.height + circle.radius ) {
+                        if ( circle.y < -circle.radius ) {
                             // code to place circle exactly off the stage at the bottom //
-                            circle.y = - circle.height
+                            /** This should be - circle.radius!*/
+                            circle.y = canvas.height + circle.radius;
                         } else if ( circle.y > canvas.height + circle.radius ) {
                             // your code to place circle exactly off the stage at the top //
-                            circle.y += circle.height
+                            circle.y = -circle.radius;
                         }
                         
                         // YOUR TODO 6 CODE ENDS HERE //////////////////////////

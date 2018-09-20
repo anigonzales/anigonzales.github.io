@@ -6,7 +6,7 @@
                 background: rgb(230, 230, 255);
                 color: rgb(0, 0, 0);
                 padding: 10px;
-                font-family: arial;
+                font-family: Georgia;
             }
             header {
                 font-size: 1.5em;
@@ -30,6 +30,7 @@
                 border-top-right-radius:2em;
                 border-bottom-right-radius:2em;
                 border-bottom-left-radius:2em;
+                
             }
             nav header {
                 display: flex;
@@ -54,74 +55,97 @@
                 background: rgb(245, 238, 219);
                 display: flex;
             }
-            [class=sidebar] {
-                margin-right: 25px;
-                padding: 10px;
+            .sidebar {
+              margin-right: 25px;
+              padding: 10px;
             }
-            [class=sidebar] img {
-                width: 200px;
+            
+            .sidebar img {
+              width: 200px;
             }
-            [class=content] {
-                flex: 1;
-                padding: 15px;
+            
+            .content {
+              flex: 1;
+              padding: 15px;
             }
-            [class=interests] header {
-                font-size: 1.25em;
+            
+            .interests header {
+              font-size: 1.25em;
             }
+        
+            button {
+              display: block; /* To avoid inline */
+            }
+            
+            .professional-content ul {
+              display: none;
+              transition: 500ms all ease;
+            }
+        
+        
+        
         </style>
         <title> Ani's Amazing Website</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         
-        <script>
-            $(document).ready(function(){
-                $("button").click(function(){
-                    $("ul.professional interests").slideDown();
+<body>  
+<div id="all-contents">
+  <nav>
+    <header>Ani's Amazing Website</header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href= "studies.html">Studies</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="sidebar">
+      <img src="https://mail.google.com/mail/u/0/?ui=2&ik=4df09cafb2&view=fimg&th=165452a04091804b&attid=0.1.1&disp=emb&attbid=ANGjdJ9lewmMheGHuQrx4zaTH2buVPilOzWqvInJBZxDZsnva2ziG_NFaDFjBtTzmraafUlg5Km7HQSkwzmjRtgVV3FtzYRjLGvV9B2gueoBBfFmAO60Fhr9h-LAmhQ&sz=s0-l75-ft&ats=1534463719799&rm=165452a04091804b&zw&atsh=1">
+    </div>
+
+    <div class="content">
+      <header> Ani Gonzales </header>
+      <p> Northshore Student</p>
+      <section class="interests">
+        <header>Very Interesting Interests</header>
+        <ul>
+          <li>Popeyes</li>
+          <li>Coding</li>
+          <li>Writing</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <main class="container2">
+    <div class="professional-content">
+      <header>About Me</header>
+      <section class="interests">
+        <button>My professional interests</button>
+        <ul class="professional_interests">
+          <li> Political Analysis </li>
+          <li> Computer Science </li>
+          <li> Writing</li>
+        </ul>
+        <script> $(".professional-content button").click(function() {
+                    $(this).next('ul').slideDown();
                 });
-            });
         </script>
-    </head>
-    
-    <body>
-        <div id="all-contents">
-            <nav>
-                <header>Ani's Amazing Website</header>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                </ul>
-            </nav>
-            
-            <main>
-                <div class="sidebar">
-                
-                    <img src="http://www.formallettertemplate.com/wp-content/uploads/2017/03/letter-a-flat,800x800,075,f.u1-nqNoIk.jpg">
-                </div>
-                
-                <div class="content">
-                    <header> Ani </header>
-                    <p> Student at Northshore High</p>
-                <section class="interests">
-                    <header>Very Interesting Interests</header>
-                    <ul>
-                        <li>Reading</li>
-                        <li>Popeyes</li>
-                        <li>Shopping</li>
-                    </ul>
-                </section>
-                    </main>
-                <main class="container2">
-                      <div class="professional-content">
-                          <header>Professional Interests</header>
-                          <section class = "interests">
-                              <button> My professional interests</button>
-                              <ul class = "professional interests">
-                                <li> Political Analysis </li>
-                                <li> Computer Science </li>
-                                <li> Key Club </li>
-                              </ul>
-                        </section>
-                  </div>
-            </main>
-        </div>
+        <button>My Resume</button>
+        <ul class="My Resume">
+          <li> <b>IBCs:</b> Microsoft Word Certified (10th), Fundamentals of Javascript, Functional Programming and Web Development Level I, II Certified (11th), BRAC Micro-Enterprise Certified (11th), Certified Internet Web Professional(11th)	 </li>
+          <li> <b>Act Scores:</b> Composite: 27 English: 34 Math: 24 Science: 25 Reading: 24 Writing: 8</li>
+          <li> <b>Classes:</b> English I,II,III,IV(all gifted), Physical Science(honors), Biology I,II(both honors), Chemistry(honors), World Geography(gifted), Civics(gifted), American History(AP), European History(AP), Algebra I,II(both honors), Geometry(honors), Pre-Calculus(dual enrollment) </li>
+          <li> <b>Extracurriculars:</b> SADD(9th), Key Club(10th, 11th, 12th) </li>
+          <li> <b>Future Goals:</b> Become a software engineer for a platform such as Google </li>
+        </ul>
+        <script> $(".professional-content button").click(function() {
+                    $(this).next('ul').slideDown();
+                });
+        </script>
+      </section>
+    </div>
+  </main>
+</div>
     </body>
 </html>
