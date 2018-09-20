@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="lib/chai.js"></script>
+    <script src="lib/sinon.js"></script>
+    <script src="lib/sinon-chai.js"></script>
+
+    <!-- Source files -->
+    <script src="src/underbar.js"></script>
+    <!-- End source files -->
+
+    <!-- Test files -->
+    <script>
+          var clock;
+
+          before(function() {
+            clock = sinon.useFakeTimers();
+          });
+
+          after(function() {
+            clock.restore();
+          });
+    </script>
+    <script src="test/part1.js"></script>
+    <script src="test/part2.js"></script>
+    <script src="test/advanced.js"></script>
+    <!-- End test files -->
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>
